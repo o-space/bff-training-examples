@@ -7,10 +7,12 @@ const wait = (milliseconds) => {
     while (Date.now() - start < milliseconds) {}
 }
 
-setTimeout(() => {
+const callback = () => {
     const delay = Date.now() - timeScheduled;
     console.log(`${delay}ms`);
-}, 100);
+}
+
+setTimeout(callback, 100);
 
 fs.readFile('4-input.txt', () => {
     wait(200);
